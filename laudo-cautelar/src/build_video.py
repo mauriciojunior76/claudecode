@@ -1,16 +1,17 @@
 """Monta o Reels (1080x1920, 30fps, H.264/AAC) a partir das camadas geradas por render.mjs.
 
-Uso (a partir de laudo-cautelar/): python3 src/build_video.py
+Uso (a partir de laudo-cautelar/): python3 src/build_video.py [nome_do_arquivo.mp4]
 Requer ffmpeg no PATH ou `pip install imageio-ffmpeg`.
 """
 import json
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "build"
-OUT = ROOT / "reels" / "reels_laudo_cautelar.mp4"
+OUT = ROOT / "reels" / (sys.argv[1] if len(sys.argv) > 1 else "reels_laudo_cautelar.mp4")
 FPS = 30
 FADE = 0.35  # entrada de cada camada de texto (fade + subida de 40px)
 

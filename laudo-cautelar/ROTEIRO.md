@@ -77,3 +77,43 @@ python3 src/build_video.py   # monta o MP4 (precisa de ffmpeg ou: pip install im
 ```
 
 Fotos em `assets/` (recortadas das artes originais). Fonte Inter embutida em `assets/fonts/`.
+
+---
+
+# 🏗️ Versão para construtoras e incorporadoras
+
+| Peça | Arquivo |
+|---|---|
+| Reels para construtoras (31 s) | `reels/reels_construtoras.mp4` |
+| Carrossel 4: Construtoras (6 slides) | `carrossel-4-construtoras/01..06.png` |
+
+## Roteiro do Reels para construtoras
+
+| Tempo | Tela | Fala |
+|---|---|---|
+| 0–3 s | "Sua construtora vai começar **obra nova?**" | 🎥 *"Sua construtora vai começar obra nova?"* |
+| 3–6 s | Rachadura: "Um único vizinho pode **parar tudo.**" | *"Um único vizinho pode parar tudo."* |
+| 6–11 s | "Ele alega que a trinca veio da sua obra" → 1 Notificação, 2 Perícia e jurídico, 3 Cronograma atrasado | *"Ele alega que a trinca foi causada pela sua obra. Vem notificação, perícia, jurídico… e o cronograma atrasa."* |
+| 11–15 s | Drone: "Laudo cautelar de vizinhança, com cada imóvel da divisa registrado antes da primeira estaca" | *"O laudo cautelar de vizinhança registra cada imóvel da divisa antes da primeira estaca."* |
+| 15–20 s | ✓ Fotos datadas ✓ Relatório com ART ✓ Várias obras ao mesmo tempo | *"Fotos datadas, relatório com ART e atendimento para várias obras ao mesmo tempo."* |
+| 20–23 s | Justiça: "Seu 'antes' vira **prova técnica.**" | *"Se alguém alegar um dano que já existia, o seu antes vira prova técnica."* |
+| 23–26 s | "Prazo protegido. **Obra andando.**" | 🎥 *"Prazo protegido, obra andando."* |
+| 26–31 s | CTA: Laudo cautelar para construtoras + WhatsApp + @ | 🎥 *"Fale com a FastPrev antes da próxima obra. Chama no WhatsApp."* |
+
+## Carrossel 4: Construtoras
+1. **Capa:** "Um vizinho pode parar a sua obra."
+2. O roteiro que atrasa cronograma
+3. O que você protege: prazo, caixa, jurídico e reputação
+4. Como a FastPrev atende construtoras
+5. O seu "antes" vira prova técnica
+6. CTA: "Próxima obra no cronograma? Fale com a FastPrev antes de cavar."
+
+## Legenda para construtoras
+> Construtora que começa obra sem laudo cautelar de vizinhança assume um risco que não precisa.
+> Um vizinho alega trinca, a obra para, o jurídico entra, o cronograma atrasa.
+> Com o laudo, cada imóvel da divisa fica registrado antes da primeira estaca: fotos datadas, relatório técnico e ART.
+> 🏗️ Atendemos construtoras e incorporadoras na Baixada Santista.
+> 📲 WhatsApp (13) 97410-6538 · Mauricio Júnior
+> #construtora #incorporadora #engenhariacivil #laudocautelar #laudodevizinhança #obras #construçãocivil #santos #baixadasantista
+
+Gerar de novo: `node src/render.mjs content_construtoras.mjs && python3 src/build_video.py reels_construtoras.mp4`

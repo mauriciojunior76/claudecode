@@ -1,11 +1,11 @@
 // Gera os PNGs dos carrosséis (1080x1350) e as camadas das cenas do Reels (1080x1920).
-// Uso: node src/render.mjs   (a partir da pasta laudo-cautelar/)
+// Uso: node src/render.mjs [conteudo.mjs]   (a partir da pasta laudo-cautelar/; padrão: content.mjs)
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { carrosseis, cenas, WHATSAPP, CONTATO, HANDLE } from './content.mjs';
 
+const { carrosseis, cenas, WHATSAPP, CONTATO, HANDLE } = await import(`./${process.argv[2] || 'content.mjs'}`);
 const require = createRequire(import.meta.url);
 let playwright;
 try { playwright = require('playwright'); } catch { playwright = require('/opt/node22/lib/node_modules/playwright'); }
