@@ -53,7 +53,12 @@ lista = BUILD / "lista.txt"
 lista.write_text("".join(f"file '{p}'\n" for p in clips))
 OUT.parent.mkdir(parents=True, exist_ok=True)
 total = sum(c["dur"] for c in cenas)
-# faixa de áudio silenciosa: o Instagram aceita melhor vídeos com áudio; troque pela sua narração/música no app
-run(["-f", "concat", "-safe", "0", "-i", str(lista), "-f", "lavfi", "-t", str(total), "-i", "anullsrc=r=48000:cl=stereo",
-     "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(OUT)])
+# trilha original sincronizada com os cortes (src/trilha.py), normalizada para ~-14 LUFS (padrão do Instagram)
+sys.path.insert(0, str(Path(__file__).parent))
+import trilha
+wav = BUILD / "trilha.wav"
+trilha.salvar(trilha.gerar([c["dur"] for c in cenas]), str(wav))
+run(["-f", "concat", "-safe", "0", "-i", str(lista), "-i", str(wav),
+     "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "48000",
+     "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(OUT)])
 print("ok", OUT.relative_to(ROOT), f"{total:.1f}s")

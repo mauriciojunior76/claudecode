@@ -4,7 +4,7 @@ Tudo gira em torno do gancho **"laudo cautelar de vizinhança"**.
 
 | Peça | Arquivo | Formato |
 |---|---|---|
-| Reels (texto animado + fotos) | `reels/reels_laudo_cautelar.mp4` | 1080×1920, 33 s, H.264, áudio mudo |
+| Reels (texto animado + fotos) | `reels/reels_laudo_cautelar.mp4` | 1080×1920, 33 s, H.264, com trilha original |
 | Carrossel 1: Antes x Depois do problema | `carrossel-1-antes-x-depois/01..05.png` | 1080×1350 (4:5) |
 | Carrossel 2: 3 erros que custam caro | `carrossel-2-3-erros/01..05.png` | 1080×1350 (4:5) |
 | Carrossel 3: Passo a passo do laudo | `carrossel-3-passo-a-passo/01..06.png` | 1080×1350 (4:5) |
@@ -29,7 +29,8 @@ grave o rosto nos trechos marcados com 🎥 e use o vídeo como B-roll/legenda p
 | 28,4–33,4 s | CTA: Manda **"LAUDO"** no direct + WhatsApp + @mauricio_fastprev | 🎥 *"Manda mensagem 'LAUDO' que eu te explico como funciona."* |
 
 **Dicas de postagem**
-- O áudio do arquivo é mudo de propósito. No Instagram, grave a narração por cima ou use um áudio em alta com volume baixo.
+- Os dois Reels já têm **trilha original de suspense** (gerada em `src/trilha.py`, sem direitos autorais, então o Instagram não silencia): impacto no 1º frame, tique de relógio, batida de coração, impacto em cada corte, pausa seca antes da virada e acorde maior no CTA. Volume em −14 LUFS, o padrão do Instagram.
+- Se for gravar narração por cima, baixe o volume do áudio original para 20–30% no editor do Instagram.
 - Textos ficam fora da área coberta pelos botões do Reels (parte de baixo e lateral direita).
 - Capa do Reels: o 1º frame já mostra o gancho.
 
