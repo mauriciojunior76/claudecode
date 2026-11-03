@@ -1,0 +1,357 @@
+<title>Mauricio Junior Engenharia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfólio de engenharia, arquitetura e segurança do trabalho: laudos cautelares, AVCB, topografia, demolição, pré-moldados, gestão e consultoria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: prancha técnica — faixas azul-marinho e papel alternadas, carimbo de prancha em cada serviço, grade de obra ao fundo */
+:root{
+  --navy:#18274b;
+  --navy-2:#22345f;
+  --lime:#b4cc2b;
+  --blue:#0000ee;
+  --paper:#f3f4ee;
+  --ink:#121a30;
+  --muted:#5a6177;
+  --line:#d6d9cc;
+  --on-navy:#eef0e6;
+  --on-navy-muted:#a9b1c7;
+  --card:#ffffff;
+  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0e1528; --ink:#e9ecf3; --muted:#9aa3ba; --line:#2a3654; --card:#141d36;
+    --navy:#18274b; --navy-2:#22345f; --blue:#7f86ff; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0e1528; --ink:#e9ecf3; --muted:#9aa3ba; --line:#2a3654; --card:#141d36;
+  --navy:#18274b; --navy-2:#22345f; --blue:#7f86ff; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:18px}
+.mark{width:30px;height:30px;border-radius:6px;background:var(--lime);display:grid;place-items:center;color:var(--navy);font-size:14px;font-weight:800}
+.nav{display:flex;gap:22px;font-size:14px}
+.nav a{text-decoration:none;color:var(--on-navy-muted)}
+.nav a:hover{color:var(--lime)}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:15px;padding:12px 20px;border-radius:999px;background:var(--lime);color:var(--navy);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--on-navy);box-shadow:inset 0 0 0 1.5px rgba(238,240,230,.35)}
+@media (max-width:760px){.nav{display:none}.top .btn{padding:9px 14px;font-size:13px}}
+
+/* Hero */
+.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding-block:72px 88px}
+.hero h1{font-size:clamp(40px,6.4vw,84px);line-height:.96;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p.lead{color:var(--on-navy-muted);font-size:clamp(16px,1.6vw,19px);max-width:52ch;margin:24px 0 32px}
+.hero .eyebrow{color:var(--lime);margin-bottom:20px;display:block}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.hero-fig{position:relative;margin:0}
+.hero-fig img{border-radius:14px;aspect-ratio:16/10;object-fit:cover;width:100%;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero-fig figcaption{position:absolute;left:-14px;bottom:-22px;background:var(--lime);color:var(--navy);font-family:var(--mono);font-size:12px;padding:10px 14px;border-radius:8px;line-height:1.4}
+.hero-fig figcaption b{display:block;font-family:var(--display);font-size:15px}
+@keyframes rise{from{transform:translateY(24px) scale(.98)}to{transform:none}}
+.stats{display:grid;grid-template-columns:repeat(3,auto);gap:28px;margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);justify-content:start}
+.stats div{font-family:var(--mono);font-size:12px;color:var(--on-navy-muted);text-transform:uppercase;letter-spacing:.08em}
+.stats b{display:block;font-family:var(--display);font-size:30px;color:var(--on-navy);letter-spacing:-.02em;text-transform:none}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 64px;gap:40px}.hero-fig figcaption{left:12px}}
+@media (max-width:440px){.stats{grid-template-columns:repeat(3,1fr);gap:12px}.stats b{font-size:24px}}
+
+/* Ticker */
+.ticker{background:var(--lime);color:var(--navy);overflow:hidden;white-space:nowrap;font-family:var(--display);font-weight:600;font-size:18px}
+.ticker .track{display:inline-flex;gap:40px;padding-block:14px;animation:slide 38s linear infinite}
+.ticker span::after{content:"✦";margin-left:40px;font-size:12px;vertical-align:middle}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* Section headings */
+section.block{padding-block:88px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:48px}
+.sec-head h2{font-size:clamp(32px,4.4vw,56px);line-height:1;font-weight:800}
+.sec-head p{color:var(--muted);margin:0;max-width:52ch}
+.sec-head .eyebrow{color:var(--blue);display:block;margin-bottom:14px}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:16px}section.block{padding-block:64px}}
+
+/* Services */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{font:500 14px var(--body);padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.svc{grid-column:span 4;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .3s,box-shadow .3s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(24,39,75,.45)}
+.svc.wide{grid-column:span 8}
+.svc .ph{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--line)}
+.svc.wide .ph{aspect-ratio:auto;height:100%;min-height:260px}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.svc:hover .ph img{transform:scale(1.05)}
+.svc .tag{position:absolute;top:12px;left:12px;background:var(--navy);color:var(--lime);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:6px}
+.svc .body{padding:20px 22px 0;flex:1}
+.svc h3{font-size:22px;line-height:1.15;font-weight:600;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:15px;margin:0}
+.svc.wide{flex-direction:row}
+.svc.wide .ph{flex:1.25}
+.svc.wide .side{flex:1;display:flex;flex-direction:column}
+/* carimbo de prancha */
+.stamp{display:grid;grid-template-columns:1fr 1fr;margin:20px 22px 22px;border:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--muted)}
+.stamp div{padding:7px 10px;min-width:0}
+.stamp div+div{border-left:1px solid var(--line)}
+.stamp b{display:block;color:var(--ink);font-weight:500;font-size:12px;overflow-wrap:anywhere}
+@media (max-width:1000px){.svc{grid-column:span 6}.svc.wide{grid-column:span 12}}
+@media (max-width:640px){.svc,.svc.wide{grid-column:span 12}.svc.wide{flex-direction:column}.svc.wide .ph{aspect-ratio:4/3;min-height:0}}
+
+/* Process */
+.process{background:var(--navy);color:var(--on-navy)}
+.process .sec-head p{color:var(--on-navy-muted)}
+.process .sec-head .eyebrow{color:var(--lime)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s;border-top:1.5px solid rgba(180,204,43,.5)}
+.step{padding:24px 20px 8px 0;position:relative;min-width:0}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:13px;color:var(--lime);display:block;margin-bottom:14px}
+.step::after{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--lime)}
+.step h3{font-size:20px;font-weight:600;margin-bottom:6px}
+.step p{color:var(--on-navy-muted);font-size:14.5px;margin:0}
+@media (max-width:900px){.steps{grid-template-columns:1fr;border-top:0;border-left:1.5px solid rgba(180,204,43,.5)}.step{padding:0 0 28px 24px}.step::after{top:2px;left:-6px}}
+
+/* Showcase */
+.show{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.show figure{margin:0;position:relative;border-radius:14px;overflow:hidden;min-width:0}
+.show img{width:100%;height:100%;object-fit:cover}
+.show figcaption{position:absolute;inset:auto 0 0 0;padding:40px 20px 18px;background:linear-gradient(transparent,rgba(12,20,40,.85));color:#fff;font-family:var(--display);font-size:18px;font-weight:600}
+.show figcaption small{display:block;font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.show .col{display:grid;gap:20px}
+@media (max-width:760px){.show{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{padding-block:88px}
+.cbox{background:var(--lime);color:var(--navy);border-radius:20px;padding:56px clamp(24px,5vw,64px);display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+.cbox h2{font-size:clamp(30px,4vw,50px);line-height:1.02;font-weight:800}
+.cbox p{margin:14px 0 0;max-width:46ch}
+.cbox .btn{background:var(--navy);color:var(--lime)}
+.cbox .handle{font-family:var(--mono);font-size:14px;margin-top:14px;display:block}
+@media (max-width:760px){.cbox{grid-template-columns:1fr;padding-block:40px}}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px}
+footer .mono{font-family:var(--mono)}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="mark">MJ</span>Mauricio Junior</a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Como trabalho</a>
+      <a href="#projetos">Projetos 3D</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn" href="#contato">Solicitar orçamento</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Engenharia · Arquitetura · Segurança do Trabalho</span>
+        <h1>Sua obra <em>regularizada</em>, segura e no prazo.</h1>
+        <p class="lead">Do laudo cautelar ao Habite-se: projetos, AVCB, topografia, gestão de obras e consultoria técnica com ART/RRT, para construtores e proprietários que precisam de documentação em dia junto à prefeitura e aos órgãos de fiscalização.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contato">Falar com o engenheiro →</a>
+          <a class="btn ghost" href="#servicos">Ver serviços</a>
+        </div>
+        <div class="stats">
+          <div><b>11</b>áreas de atuação</div>
+          <div><b>ART/RRT</b>em todo serviço</div>
+          <div><b>NBR · NR</b>normas aplicadas</div>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <img src="img/ambiente-3d.jpg" alt="Render 3D de sala e cozinha integradas com parede azul-marinho e detalhes em verde-limão" width="1600" height="900">
+        <figcaption><b>Ambientes 3D</b>Visualização antes da obra começar</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <span>Laudo cautelar</span><span>AVCB</span><span>Habite-se</span><span>Alvará</span><span>Topografia</span><span>Pré-moldados</span><span>Demolição</span><span>NR-18</span><span>NR-35</span><span>Projetos arquitetônicos</span>
+      <span>Laudo cautelar</span><span>AVCB</span><span>Habite-se</span><span>Alvará</span><span>Topografia</span><span>Pré-moldados</span><span>Demolição</span><span>NR-18</span><span>NR-35</span><span>Projetos arquitetônicos</span>
+    </div>
+  </div>
+
+  <section class="block" id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Serviços</span><h2>Tudo o que a sua obra precisa, em um só responsável técnico.</h2></div>
+        <p>Cada entrega sai com responsabilidade técnica registrada e segue a norma aplicável. Filtre por área para ver o que se encaixa no seu caso.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filtrar serviços">
+        <button class="chip" id="f-todos" data-f="todos" aria-pressed="true">Todos</button>
+        <button class="chip" id="f-eng" data-f="eng" aria-pressed="false">Engenharia</button>
+        <button class="chip" id="f-arq" data-f="arq" aria-pressed="false">Arquitetura</button>
+        <button class="chip" id="f-seg" data-f="seg" aria-pressed="false">Segurança</button>
+        <button class="chip" id="f-ges" data-f="ges" aria-pressed="false">Gestão</button>
+      </div>
+
+      <div class="grid" id="grid">
+        <article class="svc wide" data-cat="eng">
+          <div class="ph"><img src="img/laudo-cautelar.jpg" alt="Engenheiro inspecionando fissuras em fachada vizinha com tablet e medidor a laser" loading="lazy"><span class="tag">Engenharia diagnóstica</span></div>
+          <div class="side">
+            <div class="body"><h3>Laudo cautelar de vizinhança</h3><p>Registro fotográfico e técnico das edificações vizinhas antes do início da obra ou demolição. Protege o construtor contra reclamações indevidas e o vizinho contra danos reais.</p></div>
+            <div class="stamp"><div>Norma<b>NBR 13752 · NBR 16747</b></div><div>Entrega<b>Laudo + ART</b></div></div>
+          </div>
+        </article>
+
+        <article class="svc" data-cat="eng">
+          <div class="ph"><img src="img/demolicao.jpg" alt="Escavadeira com rompedor demolindo edificação com isolamento da área" loading="lazy"><span class="tag">Engenharia</span></div>
+          <div class="body"><h3>Demolição</h3><p>Plano de demolição, isolamento de área e acompanhamento técnico para derrubar com segurança e sem afetar o entorno.</p></div>
+          <div class="stamp"><div>Norma<b>NBR 5682 · NR-18</b></div><div>Entrega<b>Plano + ART</b></div></div>
+        </article>
+
+        <article class="svc" data-cat="arq">
+          <div class="ph"><img src="img/projeto-arquitetonico.jpg" alt="Maquete branca de casa moderna sobre plantas e pranchas de projeto" loading="lazy"><span class="tag">Arquitetura</span></div>
+          <div class="body"><h3>Projetos arquitetônicos</h3><p>Do estudo preliminar ao projeto legal para aprovação na prefeitura, com acessibilidade e aproveitamento do terreno.</p></div>
+          <div class="stamp"><div>Norma<b>NBR 13532 · NBR 9050</b></div><div>Entrega<b>Pranchas + RRT</b></div></div>
+        </article>
+
+        <article class="svc" data-cat="arq">
+          <div class="ph"><img src="img/ambiente-3d.jpg" alt="Render 3D de ambiente interno integrado" loading="lazy"><span class="tag">Arquitetura</span></div>
+          <div class="body"><h3>Ambientes 3D</h3><p>Renders realistas de interiores e fachadas para decidir acabamentos, iluminação e layout antes de gastar na obra.</p></div>
+          <div class="stamp"><div>Formato<b>Render 4K · Tour</b></div><div>Prazo<b>Por ambiente</b></div></div>
+        </article>
+
+        <article class="svc" data-cat="eng">
+          <div class="ph"><img src="img/canteiro.jpg" alt="Canteiro de obras com grua, estrutura em concreto e andaimes" loading="lazy"><span class="tag">Engenharia</span></div>
+          <div class="body"><h3>Canteiro de obras</h3><p>Layout de canteiro, áreas de vivência, logística de materiais e circulação para uma obra organizada e fiscalizável.</p></div>
+          <div class="stamp"><div>Norma<b>NR-18 · NBR 12284</b></div><div>Entrega<b>Layout + ART</b></div></div>
+        </article>
+
+        <article class="svc wide" data-cat="seg">
+          <div class="ph"><img src="img/avcb.jpg" alt="Corte 3D de edificação com extintores, hidrantes, sprinklers e saídas de emergência" loading="lazy"><span class="tag">Prevenção de incêndio</span></div>
+          <div class="side">
+            <div class="body"><h3>AVCB e CLCB</h3><p>Projeto técnico de segurança contra incêndio, adequação das instalações e acompanhamento da vistoria até a emissão do Auto de Vistoria do Corpo de Bombeiros.</p></div>
+            <div class="stamp"><div>Base<b>Instruções Técnicas CBPMESP</b></div><div>Entrega<b>PT + Vistoria</b></div></div>
+          </div>
+        </article>
+
+        <article class="svc" data-cat="eng">
+          <div class="ph"><img src="img/topografia.jpg" alt="Estação total, GNSS e drone fazendo levantamento de terreno" loading="lazy"><span class="tag">Engenharia</span></div>
+          <div class="body"><h3>Topografia</h3><p>Levantamento planialtimétrico, georreferenciamento e locação de obra com estação total, GNSS e drone.</p></div>
+          <div class="stamp"><div>Norma<b>NBR 13133</b></div><div>Entrega<b>DWG + memorial</b></div></div>
+        </article>
+
+        <article class="svc" data-cat="eng">
+          <div class="ph"><img src="img/pre-moldado.jpg" alt="Guindaste içando viga de concreto pré-moldado em galpão" loading="lazy"><span class="tag">Engenharia</span></div>
+          <div class="body"><h3>Pré-moldados</h3><p>Projeto e acompanhamento de estruturas pré-moldadas para galpões e edificações com montagem rápida e controle de qualidade.</p></div>
+          <div class="stamp"><div>Norma<b>NBR 9062</b></div><div>Entrega<b>Projeto + ART</b></div></div>
+        </article>
+
+        <article class="svc" data-cat="seg">
+          <div class="ph"><img src="img/seguranca-trabalho.jpg" alt="Trabalhador com EPI completo e cinto com linha de vida em andaime" loading="lazy"><span class="tag">Segurança do trabalho</span></div>
+          <div class="body"><h3>Segurança do trabalho</h3><p>PGR, treinamentos, inspeções e trabalho em altura para manter a equipe protegida e a obra livre de autuações.</p></div>
+          <div class="stamp"><div>Norma<b>NR-18 · NR-35 · NR-01</b></div><div>Entrega<b>PGR + laudos</b></div></div>
+        </article>
+
+        <article class="svc" data-cat="ges">
+          <div class="ph"><img src="img/gestao.jpg" alt="Mesa com cronograma de obra, plantas, capacete e maquete" loading="lazy"><span class="tag">Gestão</span></div>
+          <div class="body"><h3>Gestão de obras</h3><p>Cronograma físico-financeiro, orçamento, medições e fiscalização para a obra terminar no prazo e no custo combinados.</p></div>
+          <div class="stamp"><div>Ferramentas<b>Cronograma · Curva S</b></div><div>Relatório<b>Semanal</b></div></div>
+        </article>
+
+        <article class="svc wide" data-cat="ges">
+          <div class="ph"><img src="img/consultoria.jpg" alt="Reunião de consultoria analisando plantas e modelo 3D em tablet" loading="lazy"><span class="tag">Assessoria e consultoria</span></div>
+          <div class="side">
+            <div class="body"><h3>Assessoria e consultoria em engenharia, arquitetura e segurança</h3><p>Regularização de imóveis, alvará, Habite-se e parecer técnico. Você tem um responsável que conhece o caminho na prefeitura e nos órgãos de fiscalização e acompanha cada etapa até a aprovação.</p></div>
+            <div class="stamp"><div>Documentos<b>Alvará · Habite-se · Parecer</b></div><div>Responsabilidade<b>ART / RRT</b></div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block process" id="processo">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Como trabalho</span><h2>Um caminho claro do primeiro contato à documentação na mão.</h2></div>
+        <p>Você sabe em que etapa está e o que vem a seguir. Os prazos são combinados no início e acompanhados até a entrega.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Diagnóstico</h3><p>Visita técnica, levantamento da situação do imóvel e dos documentos existentes.</p></div>
+        <div class="step"><h3>Proposta</h3><p>Escopo, normas aplicáveis, prazo e valor definidos por escrito.</p></div>
+        <div class="step"><h3>Projeto e laudos</h3><p>Elaboração técnica com ART/RRT e renders 3D quando necessário.</p></div>
+        <div class="step"><h3>Aprovação</h3><p>Protocolo e acompanhamento na prefeitura, Corpo de Bombeiros e demais órgãos.</p></div>
+        <div class="step"><h3>Entrega</h3><p>Alvará, Habite-se, AVCB ou laudo entregue no prazo combinado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projetos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Projetos em 3D</span><h2>Veja a obra antes dela existir.</h2></div>
+        <p>Modelos e renders ajudam a aprovar decisões com o cliente, prever interferências no canteiro e evitar retrabalho.</p>
+      </div>
+      <div class="show">
+        <figure><img src="img/canteiro.jpg" alt="Canteiro de obras em 3D" loading="lazy"><figcaption><small>Planejamento</small>Canteiro de obras modelado</figcaption></figure>
+        <div class="col">
+          <figure><img src="img/pre-moldado.jpg" alt="Montagem de pré-moldado em 3D" loading="lazy"><figcaption><small>Estrutura</small>Sequência de montagem</figcaption></figure>
+          <figure><img src="img/projeto-arquitetonico.jpg" alt="Maquete de projeto residencial" loading="lazy"><figcaption><small>Residencial</small>Estudo volumétrico</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <div class="cbox">
+        <div>
+          <h2>Vamos regularizar a sua obra?</h2>
+          <p>Conte o que você precisa: laudo, projeto, AVCB, Habite-se ou acompanhamento de obra. Respondo com o caminho, o prazo e o orçamento.</p>
+        </div>
+        <div>
+          <a class="btn" href="https://instagram.com/mauricio_fastprev" target="_blank" rel="noopener">Chamar no Instagram →</a>
+          <span class="handle">@mauricio_fastprev</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mauricio Junior · Engenharia, Arquitetura e Segurança do Trabalho</span>
+    <span class="mono">Regularização · Laudos · Alvará · Habite-se</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip');
+  var cards=document.querySelectorAll('.svc');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      var f=c.getAttribute('data-f');
+      chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});
+      cards.forEach(function(card){card.hidden=!(f==='todos'||card.getAttribute('data-cat')===f)});
+    });
+  });
+})();
+</script>
